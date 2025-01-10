@@ -14,7 +14,7 @@ export default function App() {
   const [showResult, setShowResult] = useState(false);
   const [includeAttack, setIncludeAttack] = useState(true);
 
-  function toggleExpansionSelect(index, isAdd) {
+  function toggleExpansionSelect(index: number, isAdd: boolean) {
     const newSelectedExpansions = [...selectedExpansions];
     newSelectedExpansions[index] = isAdd
       ? selectedExpansions[index] + 1
@@ -50,9 +50,7 @@ export default function App() {
         setShowResult={setShowResult}
         includeAttack={includeAttack}
         haveTenCards={selectTenCards}
-      >
-        Randomize
-      </Randomize>
+      />
       {showResult && <Result randomCards={randomCards} />}
       <FilterBar setIncludeAttack={() => setIncludeAttack(!includeAttack)} />
       <div className="expansions-list">{expansions}</div>

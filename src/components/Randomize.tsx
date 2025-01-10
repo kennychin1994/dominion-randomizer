@@ -1,20 +1,30 @@
 import Button from "@mui/material/Button";
+import { Card, ExpansionProp } from "./types";
 
-export default function Randomize({
+type RandomizeProp = {
+  mySets: ExpansionProp[];
+  selectedExpansions: number[];
+  setRandomCards: React.Dispatch<React.SetStateAction<ExpansionProp[]>>;
+  setShowResult: React.Dispatch<React.SetStateAction<boolean>>;
+  includeAttack: boolean;
+  haveTenCards: boolean;
+};
+
+const Randomize: React.FC<RandomizeProp> = ({
   mySets,
   selectedExpansions,
   setRandomCards,
   setShowResult,
   includeAttack,
   haveTenCards,
-}) {
+}) => {
   const selectTenCards = () =>
     selectedExpansions.reduce(
       (accumulator, currentValue) => accumulator + currentValue,
       0
     ) !== 10;
 
-  function pickRandomFromExpansion(cards, cardNum) {
+  function pickRandomFromExpansion(cards: Card[], cardNum: number) {
     const chooseFromCards = includeAttack
       ? cards
       : cards.filter((c) => !c.category.includes("Attack"));
@@ -53,4 +63,6 @@ export default function Randomize({
       Randomize
     </Button>
   );
-}
+};
+
+export default Randomize;

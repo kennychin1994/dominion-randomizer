@@ -1,7 +1,9 @@
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
 
-export default function FilterBar({ setIncludeAttack }) {
+type FilterBarProp = { setIncludeAttack: () => void };
+
+const FilterBar: React.FC<FilterBarProp> = ({ setIncludeAttack }) => {
   return (
     <div>
       <FormControlLabel
@@ -11,4 +13,6 @@ export default function FilterBar({ setIncludeAttack }) {
       />
     </div>
   );
-}
+};
+
+export default FilterBar;

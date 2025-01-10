@@ -1,4 +1,14 @@
-export default function CardSelection({ cardName, isDisabled, onClick }) {
+type CardSelectionProps = {
+  cardName: string;
+  isDisabled: boolean;
+  onClick: () => void;
+};
+
+const CardSelection: React.FC<CardSelectionProps> = ({
+  cardName,
+  isDisabled,
+  onClick,
+}) => {
   return (
     <button
       className="card-selection-button"
@@ -8,4 +18,6 @@ export default function CardSelection({ cardName, isDisabled, onClick }) {
       {cardName}
     </button>
   );
-}
+};
+
+export default CardSelection;

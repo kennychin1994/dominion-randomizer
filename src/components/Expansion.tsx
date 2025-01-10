@@ -1,19 +1,28 @@
 import { useState } from "react";
 import CardSelection from "./CardSelection";
+import { ExpansionProp } from "./types";
 
-export default function Expansion({
+type ExpansionFunctionProp = {
+  expansion: ExpansionProp;
+  toggleAddExpansion: () => void;
+  toggleSubtractExpansion: () => void;
+  selectedNum: number;
+  isTen: boolean;
+};
+
+const Expansion: React.FC<ExpansionFunctionProp> = ({
   expansion,
   toggleAddExpansion,
   toggleSubtractExpansion,
   selectedNum,
   isTen,
-}) {
+}) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [cardStates, setCardStates] = useState(
     expansion.cards.map(() => false)
   );
 
-  function toggleCardState(index) {
+  function toggleCardState(index: number) {
     const newCardStates = [...cardStates];
     newCardStates[index] = !cardStates[index];
     setCardStates(newCardStates);
@@ -24,7 +33,7 @@ export default function Expansion({
       key={index}
       cardName={c.name}
       isDisabled={!cardStates[index]}
-      onClick={toggleCardState}
+      onClick={() => toggleCardState(index)}
     />
   ));
 
@@ -57,4 +66,6 @@ export default function Expansion({
       {isExpanded && <div className="expanding-box">{cardsRow}</div>}
     </div>
   );
-}
+};
+
+export default Expansion;
