@@ -1,0 +1,80 @@
+import ToggleButton from "@mui/material/ToggleButton";
+import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
+import { useState } from "react";
+
+export default function FilterBar({ attackChoice, setAttackChoice }) {
+  const handleAttackChoice = (
+    event: React.MouseEvent<HTMLElement>,
+    newAttackChoice: string | null
+  ) => {
+    setAttackChoice(newAttackChoice);
+  };
+
+  return (
+    <div>
+      <b>Attack Cards: </b>
+      <ToggleButtonGroup
+        value={attackChoice}
+        exclusive
+        onChange={handleAttackChoice}
+        aria-label="text alignment"
+        size="small"
+        sx={{
+          marginTop: "20px",
+          border: "2px solid #4caf50",
+          borderRadius: "5px",
+          backgroundColor: "lightgray",
+        }}
+      >
+        <ToggleButton
+          className="custom-toggle-button"
+          value="All"
+          aria-label="all of the cards"
+          sx={{
+            "&:hover": {
+              backgroundColor: "#1565c0",
+            },
+          }}
+        >
+          All
+        </ToggleButton>
+        <ToggleButton
+          className="custom-toggle-button"
+          value="Some"
+          aria-label="at least one of the cards"
+          sx={{
+            "&:hover": {
+              backgroundColor: "#1565c0",
+            },
+          }}
+        >
+          Some
+        </ToggleButton>
+        <ToggleButton
+          className="custom-toggle-button"
+          value="Random"
+          aria-label="select randomly"
+          sx={{
+            "&:hover": {
+              backgroundColor: "#1565c0",
+            },
+          }}
+        >
+          Random
+        </ToggleButton>
+        <ToggleButton
+          className="custom-toggle-button"
+          value="None"
+          aria-label="None of the cards"
+          sx={{
+            "&:hover": {
+              backgroundColor: "#1565c0",
+            },
+          }}
+        >
+          None
+        </ToggleButton>
+      </ToggleButtonGroup>
+    </div>
+  );
+}
