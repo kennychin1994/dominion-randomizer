@@ -28,12 +28,12 @@ const Randomize: React.FC<RandomizeProp> = ({
     const chooseFromCards = includeAttack
       ? cards
       : cards.filter((c) => !c.category.includes("Attack"));
-    const randomIndex = new Set();
+    const randomIndex: Set<number> = new Set();
     while (randomIndex.size < cardNum) {
       const ranNum = Math.floor(Math.random() * chooseFromCards.length);
       randomIndex.add(ranNum);
     }
-    return [...randomIndex].map((i) => chooseFromCards[i]);
+    return [...randomIndex].map((i: number) => chooseFromCards[i]);
   }
 
   function generateRandomCards() {

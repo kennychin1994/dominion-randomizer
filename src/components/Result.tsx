@@ -1,5 +1,11 @@
-export default function Result({ randomCards }) {
-  const resultLine = randomCards.map((e) => {
+import { ExpansionProp } from "./types";
+
+type ResultProp = {
+  randomCards: ExpansionProp[];
+};
+
+const Result: React.FC<ResultProp> = ({ randomCards }) => {
+  const resultLine = randomCards.map((e: ExpansionProp) => {
     const cardsName = e.cards.map((card) => card.name);
     return (
       <p key={e.name}>
@@ -9,4 +15,6 @@ export default function Result({ randomCards }) {
   });
 
   return <div>{resultLine}</div>;
-}
+};
+
+export default Result;

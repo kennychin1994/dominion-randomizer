@@ -5,12 +5,13 @@ import Result from "./components/Result";
 import FilterBar from "./components/FilterBar";
 import Randomize from "./components/Randomize";
 import { useState } from "react";
+import { ExpansionProp } from "./components/types";
 
 export default function App() {
   const [selectedExpansions, setSelectedExpansions] = useState(
     mySets.map(() => 0)
   );
-  const [randomCards, setRandomCards] = useState([]);
+  const [randomCards, setRandomCards] = useState<ExpansionProp[]>([]);
   const [showResult, setShowResult] = useState(false);
   const [includeAttack, setIncludeAttack] = useState(true);
 
