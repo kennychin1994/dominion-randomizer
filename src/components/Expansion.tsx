@@ -32,7 +32,6 @@ const Expansion: React.FC<ExpansionFunctionProp> = ({
     <CardSelection
       key={index}
       cardName={c.name}
-      isDisabled={!cardStates[index]}
       onClick={() => toggleCardState(index)}
     />
   ));
