@@ -109,3 +109,18 @@ html,
   cursor: not-allowed;
   pointer-events: none;
 }
+
+.card-image {
+  height: 50vh;
+  padding-top: 40px;
+  padding-right: 40px;
+}
+
+.pop-up .MuiDialog-paper {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.pop-up .MuiBackdrop-root {
+  background-color: rgba(0, 0, 0, 0.2);
+}
