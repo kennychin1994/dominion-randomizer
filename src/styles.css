@@ -76,6 +76,7 @@ html,
   align-items: center;
   width: 80px;
   height: 35px;
+  overflow: hidden;
 }
 
 .card-selection-button:hover {
@@ -113,6 +114,10 @@ html,
   height: 50vh;
   padding-top: 40px;
   padding-right: 40px;
+}
+
+.img-div {
+  display: flex;
 }
 
 .pop-up .MuiDialog-paper {

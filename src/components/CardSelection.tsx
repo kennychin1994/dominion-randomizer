@@ -40,7 +40,9 @@ const CardSelection: React.FC<CardSelectionProps> = ({ card, onClick }) => {
         >
           <CloseIcon />
         </IconButton>
-        <img className="card-image" src={card.image} />
+        <div className="img-div">
+          <img className="card-image" src={card.image} />
+        </div>
       </Dialog>
     </div>
   );
