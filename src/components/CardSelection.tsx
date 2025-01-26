@@ -4,13 +4,14 @@ import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
+import { Card } from "./types";
 
 type CardSelectionProps = {
-  cardName: string;
+  card: Card;
   onClick: () => void;
 };
 
-const CardSelection: React.FC<CardSelectionProps> = ({ cardName, onClick }) => {
+const CardSelection: React.FC<CardSelectionProps> = ({ card, onClick }) => {
   const [open, setOpen] = useState(false);
 
   function handleOpen() {
@@ -24,7 +25,7 @@ const CardSelection: React.FC<CardSelectionProps> = ({ cardName, onClick }) => {
   return (
     <div>
       <button className="card-selection-button" onClick={handleOpen}>
-        {cardName}
+        {card.name}
       </button>
       <Dialog className="pop-up" onClose={handleClose} open={open}>
         <IconButton
@@ -39,10 +40,7 @@ const CardSelection: React.FC<CardSelectionProps> = ({ cardName, onClick }) => {
         >
           <CloseIcon />
         </IconButton>
-        <img
-          className="card-image"
-          src="https://wiki.dominionstrategy.com/images/f/fb/Copper.jpg"
-        />
+        <img className="card-image" src={card.image} />
       </Dialog>
     </div>
   );

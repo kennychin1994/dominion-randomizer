@@ -31,7 +31,7 @@ const Expansion: React.FC<ExpansionFunctionProp> = ({
   const cardsRow = expansion.cards.map((c, index) => (
     <CardSelection
       key={index}
-      cardName={c.name}
+      card={c}
       onClick={() => toggleCardState(index)}
     />
   ));
