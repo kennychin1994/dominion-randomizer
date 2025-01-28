@@ -18,12 +18,6 @@ const Randomize: React.FC<RandomizeProp> = ({
   includeAttack,
   haveTenCards,
 }) => {
-  const selectTenCards = () =>
-    selectedExpansions.reduce(
-      (accumulator, currentValue) => accumulator + currentValue,
-      0
-    ) !== 10;
-
   function pickRandomFromExpansion(cards: Card[], cardNum: number) {
     const chooseFromCards = includeAttack
       ? cards
