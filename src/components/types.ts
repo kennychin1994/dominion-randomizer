@@ -8,6 +8,7 @@ export type Card = {
 
 export type ExpansionProp = {
   name: string;
+  image: string;
   cards: Card[];
   events?: string[];
   allies?: string[];

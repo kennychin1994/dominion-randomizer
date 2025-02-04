@@ -1,6 +1,7 @@
 import { useState } from "react";
 import CardSelection from "./CardSelection";
 import { ExpansionProp } from "./types";
+import Grid from '@mui/material/Grid2';
 
 type ExpansionFunctionProp = {
   expansion: ExpansionProp;
@@ -37,14 +38,10 @@ const Expansion: React.FC<ExpansionFunctionProp> = ({
   ));
 
   return (
-    <div className="expansion-tab">
+    <Grid className="expansion-grid" key={expansion.name} size={{ xs: 2, sm: 2, md: 2 }}>
+      <h3>{expansion.name}</h3>
+      <img className="expansion-image" src={expansion.image}></img>
       <div className="expansion-header">
-        <button
-          className="expansion-tab-button"
-          onClick={() => setIsExpanded(!isExpanded)}
-        >
-          {expansion.name}
-        </button>
         <button
           className="toggle-button"
           onClick={toggleSubtractExpansion}
@@ -59,11 +56,9 @@ const Expansion: React.FC<ExpansionFunctionProp> = ({
           disabled={isTen}
         >
           +
-        </button>
-      </div>
-
-      {isExpanded && <div className="expanding-box">{cardsRow}</div>}
-    </div>
+        </button>      
+        </div>
+    </Grid>
   );
 };
 

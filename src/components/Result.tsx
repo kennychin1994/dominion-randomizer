@@ -1,16 +1,25 @@
-import { ExpansionProp } from "./types";
+import { Card } from "./types";
+import Box from '@mui/material/Box';
 
 type ResultProp = {
-  randomCards: ExpansionProp[];
+  randomCards: {name: string; cards: Card[]}[];
+  maxNumCards: number;
 };
 
-const Result: React.FC<ResultProp> = ({ randomCards }) => {
-  const resultLine = randomCards.map((e: ExpansionProp) => {
-    const cardsName = e.cards.map((card) => card.name);
+const Result: React.FC<ResultProp> = ({ randomCards, maxNumCards }) => {
+  const columnNum = Math.min(maxNumCards, 5);
+  const resultLine = randomCards.map((e: {name: string; cards: Card[]}) => {
     return (
-      <p key={e.name}>
-        <b>{e.name}</b>: {cardsName.join(", ")}
-      </p>
+      <Box className="result-box" sx={{ flexGrow: 1 }}>
+        <h3 className="result-title">{e.name}</h3>
+        <Box className="result-grid" sx={{gridTemplateColumns: `repeat(${columnNum}, 1fr)`}}>
+          {e.cards.map((c: Card) => (
+            <Box key={c.name} className="result-image-grid">
+              <img src={c.image} />
+            </Box>
+          ))}
+        </Box>
+      </Box>
     );
   });
 

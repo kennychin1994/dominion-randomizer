@@ -1,5 +1,6 @@
 const base = {
   name: "Base",
+  image: "https://wiki.dominionstrategy.com/images/2/21/Dominion2.jpg",
   cards: [
     {
       name: "Cellar",
@@ -188,6 +189,7 @@ const base = {
 
 const seaside = {
   name: "Seaside",
+  image: "https://wiki.dominionstrategy.com/images/8/84/Seaside2.jpg",
   cards: [
     {
       name: "Haven",
@@ -384,6 +386,7 @@ const seaside = {
 
 const prosperity = {
   name: "Prosperity",
+  image: "https://wiki.dominionstrategy.com/images/9/97/Prosperity.jpg",
   cards: [
     {
       name: "Loan",
@@ -566,6 +569,7 @@ const prosperity = {
 
 const hinterlands = {
   name: "Hinterlands",
+  image: "https://wiki.dominionstrategy.com/images/2/23/Hinterlands2.jpg",
   cards: [
     {
       name: "Crossroads",
@@ -755,6 +759,7 @@ const hinterlands = {
 
 const empires = {
   name: "Empires",
+  image: "https://wiki.dominionstrategy.com/images/0/0c/Empires.jpg",
   cards: [
     {
       name: "Engineer",
@@ -973,6 +978,7 @@ const empires = {
 
 const allies = {
   name: "Allies",
+  image: "https://wiki.dominionstrategy.com/images/a/ab/Allies.jpg",
   cards: [
     {
       name: "Bauble",
@@ -1221,6 +1227,7 @@ const allies = {
 
 const plunder = {
   name: "Plunder",
+  image: "https://wiki.dominionstrategy.com/images/0/0a/Plunder_%28expansion%29.jpg",
   cards: [
     {
       name: "Cage",
@@ -1544,6 +1551,7 @@ const plunder = {
 
 const adventures = {
   name: "Adventures",
+  image: "https://wiki.dominionstrategy.com/images/d/da/Adventures.jpg",
   cards: [
     {
       name: "Coin of the Realm",
@@ -1783,6 +1791,7 @@ const adventures = {
 
 const risingSun = {
   name: "Rising Sun",
+  image: "https://wiki.dominionstrategy.com/images/4/4a/Rising_Sun.jpg",
   cards: [
     {
       name: "Mountain Shrine",

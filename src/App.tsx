@@ -1,18 +1,16 @@
 import "./styles.css";
 import mySets from "./components/Dominion List";
 import Expansion from "./components/Expansion";
-import Result from "./components/Result";
-import FilterBar from "./components/FilterBar";
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid2';
+// import FilterBar from "./components/FilterBar";
 import Randomize from "./components/Randomize";
 import { useState } from "react";
-import { ExpansionProp } from "./components/types";
 
 export default function App() {
   const [selectedExpansions, setSelectedExpansions] = useState(
     mySets.map(() => 0)
   );
-  const [randomCards, setRandomCards] = useState<ExpansionProp[]>([]);
-  const [showResult, setShowResult] = useState(false);
   const [includeAttack, setIncludeAttack] = useState(true);
 
   function toggleExpansionSelect(index: number, isAdd: boolean) {
@@ -30,6 +28,7 @@ export default function App() {
     ) !== 10;
 
   const expansions = mySets.map((e, index) => (
+    
     <Expansion
       key={e.name}
       expansion={e}
@@ -47,14 +46,14 @@ export default function App() {
       <Randomize
         mySets={mySets}
         selectedExpansions={selectedExpansions}
-        setRandomCards={setRandomCards}
-        setShowResult={setShowResult}
         includeAttack={includeAttack}
         haveTenCards={selectTenCards}
       />
-      {showResult && <Result randomCards={randomCards} />}
-      <FilterBar setIncludeAttack={() => setIncludeAttack(!includeAttack)} />
-      <div className="expansions-list">{expansions}</div>
+      <Box className="expansion-select-box" sx={{ flexGrow: 1 }}>
+        <Grid container spacing={0} columns={{ xs: 4, sm: 8, md: 12 }}>
+          {expansions}
+        </Grid>
+      </Box>
     </div>
   );
 }

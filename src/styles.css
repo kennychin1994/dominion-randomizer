@@ -17,75 +17,18 @@ html,
   color: #ffffff;
 }
 
-.expansion-tab {
-  margin: 20px;
-  margin-left: auto;
-  margin-right: auto;
+.expansion-select-box {
+  padding-bottom: 30px;
 }
 
-.expansion-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.expansion-tab-button {
-  background-color: #a38de4;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 14px;
-  text-align: center;
-  transition: background-color 0.3s ease;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-.expansion-tab-button:hover {
-  background-color: #1b055f;
-}
-
-.expanding-box {
-  padding: 10px;
-  margin-top: 10px;
-  border: 2px solid #c82f2f;
-  border-radius: 5px;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
-  gap: 10px;
-  width: 100%;
-  justify-items: center;
-  align-items: center;
-}
-
-.card-selection-button {
-  font-size: 12px;
-  background-color: #0b30ab;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  text-align: center;
-  transition: background-color 0.3s ease;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 80px;
-  height: 35px;
+.expansion-grid {
   overflow: hidden;
 }
 
-.card-selection-button:hover {
-  background-color: #14e1de;
-}
-
-.card-selection-button:disabled {
-  background-color: #e2dfdf;
-  color: #b6b6b6;
+.expansion-grid img {
+  width: 90%;
+  height: auto;
+  object-fit: cover;
 }
 
 .toggle-button {
@@ -110,21 +53,30 @@ html,
   pointer-events: none;
 }
 
-.card-image {
-  height: 50vh;
-  padding-top: 40px;
-  padding-right: 40px;
-}
-
-.img-div {
-  display: flex;
-}
-
-.pop-up .MuiDialog-paper {
-  background-color: transparent;
+.result-display .MuiDialog-paper {
+  background-color: #dba0a0;
   box-shadow: none;
 }
 
-.pop-up .MuiBackdrop-root {
+.result-display .MuiBackdrop-root {
   background-color: rgba(0, 0, 0, 0.2);
+}
+
+.result-grid {
+  display: grid;
+  padding: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding-top: 0px;
+}
+
+/* Each card container */
+.result-image-grid img {
+  width: 150px;
+  height: auto;
+  object-fit: cover;
+}
+
+.result-title {
+  padding-bottom: 0px;
 }
